@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Sul Vidraçaria | Soluções Premium em Vidros Temperados e Especiais</title>
+    <meta name="description" content="Especialistas em vidros temperados, espelhos, box para banheiro e projetos especiais. Qualidade e segurança para residências e empresas.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #E74C3C;
+            --accent: #3498DB;
+            --dark: #1A1A1A;
+            --light: #FFFFFF;
+            --gray: #ECF0F1;
+            --medium-gray: #BDC3C7;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Video Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: var(--light);
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+            border: 2px solid var(--secondary);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            border-color: var(--light);
+            color: var(--light);
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        
+        .whatsapp-icon {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 5rem 0;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background-color: var(--gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .service-link i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .service-link:hover {
+            color: var(--accent);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background-color: var(--light);
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--medium-gray);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .filter-btn:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--primary);
+        }
+        
+        .filter-btn.active:after, .filter-btn:hover:after {
+            width: 100%;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-overlay p {
+            color: var(--medium-gray);
+            transform: translateY(20px);
+            transition: transform 0.3s 0.1s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay h3,
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background-color: var(--gray);
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-slider {
+            position: relative;
+        }
+        
+        .testimonial-slide {
+            background-color: var(--light);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 0 1rem;
+            position: relative;
+        }
+        
+        .testimonial-slide:before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+        .testimonial-content {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            background-color: var(--secondary);
+            color: var(--light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-details p, .contact-details a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-form {
+            background-color: var(--gray);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary);
+            color: var(--light);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Map Section */
+        .map-section {
+            height: 500px;
+            position: relative;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 350px;
+            z-index: 1;
+        }
+        
+        .map-overlay h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .map-overlay p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .map-overlay i {
+            color: var(--secondary);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Fixed Button */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-fixed:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .map-overlay {
+                left: 20px;
+                bottom: 20px;
+                max-width: calc(100% - 40px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-slide {
+                padding: 2rem 1.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-glass-martini-alt"></i>
+                MS <span>Sul</span> Vidraçaria
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Video Section -->
+    <section class="hero">
+        <video autoplay muted loop class="video-background">
+            <source src="https://example.com/vidro-video.mp4" type="video/mp4">
+            <!-- Substitua pelo seu vídeo real -->
+        </video>
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <h1>Soluções em Vidros de Alta Qualidade</h1>
+            <p>Especializados em vidros temperados, espelhos, box para banheiro e projetos personalizados para residências e empresas.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/55SEUNUMERO" class="cta-button">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i> Orçamento via WhatsApp
+                </a>
+                <a href="#servicos" class="cta-button secondary">
+                    <i class="fas fa-clipboard-list"></i> Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1200+</div>
+                <div class="stat-label">Projetos Concluídos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Clientes Satisfeitos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Atendimento Rápido</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <div class="section-title">
+            <h2>Nossos Serviços</h2>
+            <p>Oferecemos soluções completas em vidraçaria para atender às necessidades residenciais e corporativas</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Box para Banheiro">
+                </div>
+                <div class="service-content">
+                    <h3>Box para Banheiro</h3>
+                    <p>Box em vidro temperado com diversos modelos e acabamentos para complementar seu banheiro com elegância e funcionalidade.</p>
+                    <a href="#" class="service-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sacadas e Guarda-Corpos">
+                </div>
+                <div class="service-content">
+                    <h3>Sacadas e Guarda-Corpos</h3>
+                    <p>Soluções em vidro para sacadas que combinam segurança, durabilidade e design moderno para seu imóvel.</p>
+                    <a href="#" class="service-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Espelhos Decorativos">
+                </div>
+                <div class="service-content">
+                    <h3>Espelhos Decorativos</h3>
+                    <p>Espelhos planos e bisotados para ambientes residenciais e comerciais, com diversos formatos e tamanhos.</p>
+                    <a href="#" class="service-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Janelas e Portas de Vidro">
+                </div>
+                <div class="service-content">
+                    <h3>Janelas e Portas de Vidro</h3>
+                    <p>Sistemas de portas e janelas em vidro temperado ou laminado para diversos tipos de ambientes.</p>
+                    <a href="#" class="service-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Divisórias de Vidro">
+                </div>
+                <div class="service-content">
+                    <h3>Divisórias de Vidro</h3>
+                    <p>Soluções modernas para divisão de ambientes comerciais e residenciais, proporcionando luminosidade e amplitude.</p>
+                    <a href="#" class="service-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Projetos Especiais">
+                </div>
+                <div class="service-content">
+                    <h3>Projetos Especiais</h3>
+                    <p>Desenvolvemos soluções personalizadas em vidro para atender necessidades específicas de seu projeto.</p>
+                    <a href="#" class="service-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-title">
+            <h2>Nossos Trabalhos</h2>
+            <p>Confira alguns dos nossos projetos recentes e inspire-se para o seu</p>
+        </div>
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="residencial">Residencial</button>
+            <button class="filter-btn" data-filter="comercial">Comercial</button>
+            <button class="filter-btn" data-filter="box">Box Banheiro</button>
+            <button class="filter-btn" data-filter="sacadas">Sacadas</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="residencial">
+                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Projeto Residencial">
+                <div class="portfolio-overlay">
+                    <h3>Cobertura Moderna</h3>
+                    <p>Portas de correr em vidro temperado</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="comercial">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Projeto Comercial">
+                <div class="portfolio-overlay">
+                    <h3>Escritório Corporativo</h3>
+                    <p>Divisórias em vidro fumê</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="box">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Box Banheiro">
+                <div class="portfolio-overlay">
+                    <h3>Box Elegante</h3>
+                    <p>Vidro temperado 8mm com acabamento em alumínio</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="sacadas">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sacada de Vidro">
+                <div class="portfolio-overlay">
+                    <h3>Sacada Panorâmica</h3>
+                    <p>Guarda-corpo em vidro laminado</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="residencial">
+                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Janelas Residenciais">
+                <div class="portfolio-overlay">
+                    <h3>Residência Clássica</h3>
+                    <p>Janelas em vidro duplo</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="comercial">
+                <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Espelhos Comerciais">
+                <div class="portfolio-overlay">
+                    <h3>Loja de Departamentos</h3>
+                    <p>Espelhos bisotados para provador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="sobre">
+        <div class="section-title">
+            <h2>O Que Dizem Nossos Clientes</h2>
+            <p>Depoimentos de quem já contratou nossos serviços</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Contratei a MS Sul para instalar o box do meu banheiro e fiquei impressionado com a qualidade do material e o profissionalismo da equipe. O acabamento ficou perfeito e o prazo foi cumprido rigorosamente. Recomendo!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Silva">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Silva</h4>
+                            <p>Residencial - Porto Alegre</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Precisávamos de divisórias de vidro para nosso escritório e a MS Sul apresentou a melhor solução técnica e de design. O resultado superou nossas expectativas e já estamos planejando novos projetos com eles."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Paula Oliveira">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Paula Oliveira</h4>
+                            <p>Comercial - Canoas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Já fiz vários projetos com a MS Sul e sempre atenderam com excelência. O que mais me impressiona é o cuidado com os detalhes e o atendimento pós-venda. Empresa séria e competente que vale a pena recomendar."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Roberto Mendes</h4>
+                            <p>Arquiteto - Novo Hamburgo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <div class="section-title">
+            <h2>Entre em Contato</h2>
+            <p>Estamos prontos para atender seu projeto com a melhor solução em vidros</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informações de Contato</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Endereço</h4>
+                        <p>Av. Assis Brasil, 1234<br>Bairro Industrial, Porto Alegre - RS</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Telefone</h4>
+                        <p><a href="tel:+555112345678">(51) 1234-5678</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p><a href="mailto:contato@mssulvidracaria.com.br">contato@mssulvidracaria.com.br</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Horário de Atendimento</h4>
+                        <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Envie sua Mensagem</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Seu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Seu Telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="">Selecione o Serviço</option>
+                            <option value="box">Box para Banheiro</option>
+                            <option value="sacadas">Sacadas e Guarda-Corpos</option>
+                            <option value="espelhos">Espelhos Decorativos</option>
+                            <option value="janelas">Janelas e Portas</option>
+                            <option value="divisorias">Divisórias</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Descreva seu projeto ou dúvida" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.678530634728!2d-51.17884968488506!3d-30.039924581883767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzIzLjciUyA1McKwMTAnMzkuNyJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="map-overlay">
+            <h3>Visite Nossa Loja</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Av. Assis Brasil, 1234 - Bairro Industrial</p>
+            <p><i class="fas fa-city"></i> Porto Alegre - RS</p>
+            <p><i class="fas fa-clock"></i> Seg-Sex: 8h às 18h | Sáb: 8h às 12h</p>
+            <a href="https://wa.me/55SEUNUMERO" class="cta-button" style="margin-top: 15px; display: inline-block;">
+                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>MS Sul Vidraçaria</h4>
+                <p>Especialistas em soluções de vidro para residências e empresas, oferecendo qualidade, segurança e design inovador.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Box para Banheiro</a></li>
+                    <li><a href="#">Sacadas e Guarda-Corpos</a></li>
+                    <li><a href="#">Espelhos Decorativos</a></li>
+                    <li><a href="#">Janelas e Portas</a></li>
+                    <li><a href="#">Divisórias de Vidro</a></li>
+                    <li><a href="#">Projetos Especiais</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Assine nossa newsletter para receber novidades e promoções.</p>
+                <form action="#" method="POST" style="margin-top: 1rem;">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Seu Email" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid var(--medium-gray);">
+                    </div>
+                    <button type="submit" class="submit-btn" style="width: 100%; padding: 10px; margin-top: 10px;">
+                        Assinar
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 MS Sul Vidraçaria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Fixed Button -->
+    <a href="https://wa.me/55SEUNUMERO" class="whatsapp-fixed">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script>
+        // Simple filter functionality for portfolio
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Simple animation on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.service-card, .portfolio-item, .testimonial-slide');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            const services = document.querySelectorAll('.service-card');
+            const portfolioItem = document.querySelectorAll('.portfolio-item');
+            const testimonials = document.querySelectorAll('.testimonial-slide');
+            
+            services.forEach(service => {
+                service.style.opacity = '0';
+                service.style.transform = 'translateY(30px)';
+                service.style.transition = 'all 0.6s ease';
+            });
+            
+            portfolioItem.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+            });
+            
+            testimonials.forEach(testimonial => {
+                testimonial.style.opacity = '0';
+                testimonial.style.transform = 'translateY(30px)';
+                testimonial.style.transition = 'all 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
+</body>
+</html>
