@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSSULINOX Vidraçaria - Orçamento via WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #075e54;
+            --secondary-color: #128C7E;
+            --whatsapp-color: #25D366;
+            --accent-color: #FFD700;
+            --dark-color: #333;
+            --light-color: #f9f9f9;
+            --gray-color: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-slide {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide-1 {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        }
+        
+        .slide-2 {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+        }
+        
+        .slide-3 {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+        }
+        
+        .slide-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .slogan {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .whatsapp-icon {
+            margin-right: 10px;
+        }
+        
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.6;
+            width: 12px;
+            height: 12px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: var(--whatsapp-color);
+            opacity: 1;
+        }
+        
+        /* Seções */
+        section {
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+        
+        /* Benefícios */
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-item {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Serviços */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(7,94,84,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card p {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Como funciona */
+        .how-it-works {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Depoimentos */
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary-color);
+            opacity: 0.1;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .rating {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .author {
+            font-weight: bold;
+            text-align: right;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Contato */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            min-width: 300px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(7,94,84,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        /* Galeria */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* CTA Final */
+        .final-cta {
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 15px;
+            margin-top: 60px;
+            background-image: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 50px 20px 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            margin: 30px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            line-height: 50px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--whatsapp-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Botão flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1.8rem;
+            line-height: 60px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+        
+        /* Responsivo */
+        @media (max-width: 992px) {
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            .slogan {
+                font-size: 1.5rem;
+            }
+            
+            .swiper-slide {
+                height: 70vh;
+                min-height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .slogan {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .swiper-slide {
+                height: 60vh;
+                min-height: 350px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                line-height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .slogan {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .swiper-slide {
+                height: 80vh;
+            }
+            
+            .benefit-item, .service-card, .step {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header com Slider -->
+    <header>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide slide-1">
+                    <div class="slide-content">
+                        <div class="logo">MSSULINOX</div>
+                        <div class="slogan">Vidros de Alta Qualidade para Sua Casa ou Empresa</div>
+                        <a href="https://wa.me/SEUNUMERODOWHATSAPP" class="cta-button">
+                            <i class="fab fa-whatsapp whatsapp-icon"></i> Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="swiper-slide slide-2">
+                    <div class="slide-content">
+                        <div class="logo">MSSULINOX</div>
+                        <div class="slogan">Box para Banheiro Sob Medida com Garantia</div>
+                        <a href="https://wa.me/SEUNUMERODOWHATSAPP" class="cta-button">
+                            <i class="fab fa-whatsapp whatsapp-icon"></i> Fale Conosco
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="swiper-slide slide-3">
+                    <div class="slide-content">
+                        <div class="logo">MSSULINOX</div>
+                        <div class="slogan">Espelhos e Vidros Temperados com Instalação Profissional</div>
+                        <a href="https://wa.me/SEUNUMERODOWHATSAPP" class="cta-button">
+                            <i class="fab fa-whatsapp whatsapp-icon"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Seção Benefícios -->
+        <section id="benefits">
+            <h2 class="section-title">Por que Escolher a MSSULINOX?</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Profissionais Certificados</h3>
+                    <p>Nossa equipe altamente qualificada garante instalações perfeitas e seguras.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Materiais Premium</h3>
+                    <p>Trabalhamos apenas com vidros de primeira linha e acessórios duráveis.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Atendimento Ágil</h3>
+                    <p>Orçamento rápido via WhatsApp e instalação no prazo combinado.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Garantia</h3>
+                    <p>Todos nossos serviços possuem garantia por escrito contra defeitos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Serviços -->
+        <section id="services">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Vidros Temperados</h3>
+                    <p>Segurança e resistência para portas, janelas e sacadas. 5x mais resistente que vidro comum.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bath"></i></div>
+                    <h3>Box para Banheiro</h3>
+                    <p>Modelos deslizantes ou de abrir, em diversos acabamentos e espessuras.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mirror"></i></div>
+                    <h3>Espelhos Decorativos</h3>
+                    <p>Sob medida com bisotê, iluminação LED ou moldura personalizada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Fachadas de Vidro</h3>
+                    <p>Soluções corporativas com vidro laminado, insulado ou serigrafado.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-columns"></i></div>
+                    <h3>Divisórias</h3>
+                    <p>Amplie ambientes com elegância usando divisórias de vidro temperado.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-store"></i></div>
+                    <h3>Vitrines</h3>
+                    <p>Proteja seu comércio com vitrines resistentes e visual atraente.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Como Funciona -->
+        <section id="how-it-works">
+            <h2 class="section-title">Como Funciona?</h2>
+            <div class="how-it-works">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contato Inicial</h3>
+                    <p>Você entra em contato pelo WhatsApp ou telefone para descrever seu projeto.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Visita Técnica</h3>
+                    <p>Agendamos uma visita para medições e sugestões técnicas sem custo.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Orçamento</h3>
+                    <p>Enviaremos proposta detalhada com medidas, materiais e prazo.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Instalação</h3>
+                    <p>Nossa equipe realiza a instalação com limpeza e garantia de qualidade.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Galeria -->
+        <section id="gallery">
+            <h2 class="section-title">Nossos Trabalhos</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600566752227-09d4d5393447?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Box para banheiro">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vidro temperado">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Espelho decorativo">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fachada de vidro">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Depoimentos -->
+        <section id="testimonials">
+            <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Contratei a MSSULINOX para fazer o box do banheiro e ficou perfeito! O acabamento é impecável e o preço foi justo. A equipe foi muito profissional e respeitosa durante a instalação."</p>
+                    <div class="author">- Carlos M., São Paulo</div>
+                </div>
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Fizemos toda a fachada de vidro do nosso escritório com eles. O projeto foi entregue antes do prazo e com qualidade superior ao que esperávamos. Recomendo muito!"</p>
+                    <div class="author">- Ana L., Campinas</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Contato -->
+        <section id="contact">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-text">
+                        <h3>Telefone</h3>
+                        <p>(11) 9999-9999</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <h3>E-mail</h3>
+                        <p>contato@mssulinox.com.br</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <h3>Endereço</h3>
+                        <p>Av. Paulista, 1000 - São Paulo/SP</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-text">
+                        <h3>Horário</h3>
+                        <p>Seg-Sex: 8h às 18h<br>Sáb: 9h às 13h</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Final -->
+        <div class="final-cta">
+            <h2>Pronto para Transformar Seu Espaço?</h2>
+            <p>Solicite um orçamento sem compromisso agora mesmo e receba uma proposta personalizada para seu projeto.</p>
+            <a href="https://wa.me/SEUNUMERODOWHATSAPP" class="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Fale Conosco pelo WhatsApp
+            </a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MSSULINOX</h3>
+                    <p>Especialistas em soluções em vidros há mais de 15 anos, transformando ambientes com qualidade e segurança.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#">Vidros Temperados</a></li>
+                        <li><a href="#">Box para Banheiro</a></li>
+                        <li><a href="#">Espelhos Decorativos</a></li>
+                        <li><a href="#">Fachadas de Vidro</a></li>
+                        <li><a href="#">Divisórias</a></li>
+                        <li><a href="#">Vitrines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Portfólio</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 MSSULINOX Vidraçaria - Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/SEUNUMERODOWHATSAPP" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializar Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+        
+        // Animação ao rolar
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.benefit-item, .service-card, .step, .testimonial, .gallery-item, .contact-method');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Inicializar elementos com opacidade 0
+            const itemsToAnimate = document.querySelectorAll('.benefit-item, .service-card, .step, .testimonial, .gallery-item, .contact-method');
+            itemsToAnimate.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+        }
+    )
+    </script>
+</body>
+</html>
