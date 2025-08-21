@@ -6,6 +6,7 @@
     <title>MS Sul Vidraçaria | Soluções Premium em Vidros Temperados e Especiais</title>
     <meta name="description" content="Especialistas em vidros temperados, espelhos, box para banheiro e projetos especiais. Qualidade e segurança para residências e empresas.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2C3E50;
@@ -133,6 +134,7 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            background-image: url("imgs/back.png");
         }
         
         .video-overlay {
@@ -141,14 +143,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.749);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.405));
             z-index: -1;
+        }
+        .video-overlay::before{
+            content: "";
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, rgba(18, 19, 11, 0.925) 50%, rgba(18, 19, 11, 0) 57%);
         }
         
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             padding: 0 2rem;
+            width: 80%;
             color: var(--light);
             z-index: 1;
         }
@@ -469,40 +485,52 @@
         
         .testimonials-container {
             max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
             margin: 0 auto;
             padding: 0 2rem;
         }
         
         .testimonial-slider {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
             position: relative;
         }
-        
+        .google-logo{
+            margin-top: 2.0rem;
+            height: fit-content;
+            width: fit-content;
+        }
+        .google-logo svg{
+            height: 2.0rem;
+            margin-top: 1.0rem;
+        }
         .testimonial-slide {
             background-color: var(--light);
-            padding: 3rem;
+            padding: 2rem;
+            width: 30%;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin: 0 1rem;
+            margin-top: 20px;
             position: relative;
         }
         
-        .testimonial-slide:before {
-            content: '\201C';
-            font-family: Georgia, serif;
-            font-size: 5rem;
-            color: var(--secondary);
-            opacity: 0.2;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
         
         .testimonial-content {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 2rem;
+            color: rgb(17, 17, 17);
+            font-size: 16px;
+            font-family: "Roboto", sans-serif;
             position: relative;
             z-index: 1;
+            line-height: 23px;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         .testimonial-author {
@@ -837,6 +865,14 @@
         }
         
         @media (max-width: 768px) {
+            .testimonial-slider{
+                flex-direction: column;
+            }
+            .testimonial-slide{
+                width: 100%;
+                margin: auto;
+                margin-top: 20px;
+            }
             .header-container {
                 flex-direction: column;
                 padding: 1rem;
@@ -914,10 +950,8 @@
     
     <!-- Hero Video Section -->
     <section class="hero">
-        <video autoplay muted loop class="video-background">
-            <source src="video.mp4" type="video/mp4">
-            <!-- Substitua pelo seu vídeo real -->
-        </video>
+        <div class="video-background">
+        </div>
         <div class="video-overlay"></div>
         <div class="hero-content">
             <h1>Soluções em Vidros de Alta Qualidade</h1>
@@ -1040,7 +1074,7 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item" data-category="residencial">
-                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Projeto Residencial">
+                <img src="imgs/0.png" alt="Projeto Residencial">
                 <div class="portfolio-overlay">
                     <h3>Cobertura Moderna</h3>
                     <p>Portas de correr em vidro temperado</p>
@@ -1048,7 +1082,7 @@
             </div>
             
             <div class="portfolio-item" data-category="comercial">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Projeto Comercial">
+                <img src="imgs/1.png" alt="Projeto Comercial">
                 <div class="portfolio-overlay">
                     <h3>Escritório Corporativo</h3>
                     <p>Divisórias em vidro fumê</p>
@@ -1056,7 +1090,7 @@
             </div>
             
             <div class="portfolio-item" data-category="box">
-                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Box Banheiro">
+                <img src="imgs/3.png" alt="Box Banheiro">
                 <div class="portfolio-overlay">
                     <h3>Box Elegante</h3>
                     <p>Vidro temperado 8mm com acabamento em alumínio</p>
@@ -1064,7 +1098,7 @@
             </div>
             
             <div class="portfolio-item" data-category="sacadas">
-                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sacada de Vidro">
+                <img src="imgs/4.png" alt="Sacada de Vidro">
                 <div class="portfolio-overlay">
                     <h3>Sacada Panorâmica</h3>
                     <p>Guarda-corpo em vidro laminado</p>
@@ -1072,7 +1106,7 @@
             </div>
             
             <div class="portfolio-item" data-category="residencial">
-                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Janelas Residenciais">
+                <img src="imgs/5.png" alt="Janelas Residenciais">
                 <div class="portfolio-overlay">
                     <h3>Residência Clássica</h3>
                     <p>Janelas em vidro duplo</p>
@@ -1080,7 +1114,7 @@
             </div>
             
             <div class="portfolio-item" data-category="comercial">
-                <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Espelhos Comerciais">
+                <img src="imgs/6.png" alt="Espelhos Comerciais">
                 <div class="portfolio-overlay">
                     <h3>Loja de Departamentos</h3>
                     <p>Espelhos bisotados para provador</p>
@@ -1098,48 +1132,124 @@
         <div class="testimonials-container">
             <div class="testimonial-slider">
                 <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"Contratei a MS Sul para instalar o box do meu banheiro e fiquei impressionado com a qualidade do material e o profissionalismo da equipe. O acabamento ficou perfeito e o prazo foi cumprido rigorosamente. Recomendo!"</p>
-                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Silva">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXvmwGbbuUc24xMMGp-l1aaJUp46lpez9gdVThRYxpYhAtjQyFP=w144-h144-p-rp-mo-br100" alt="Carlos Silva">
                         </div>
                         <div class="author-info">
-                            <h4>Carlos Silva</h4>
-                            <p>Residencial - Porto Alegre</p>
+                            <h4>CRPorsche “CRPC Porsche”</h4>
                         </div>
                     </div>
+                    <div class="testimonial-content">
+                        <p>Excelente. Super indico a MS SUL. Eles fizeram o guarda corpo da minha área de piscina e ficou lindíssima. Tive um imprevisto e um super atraso na minha reforma e eles, pacientemente, aguardaram o tempo que precisei. Depois tivemos uma falha na comunicação e eles corrigiram, sem medir esforços, atendendo a minha vontade. Todo material e equipe de primeira. NOTA DEZ.</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/106239974099880636565/place/ChIJi9ReDd0rGpURaVzDqxboGQY/@-30.001411,-51.2063841,17z/data=!3m1!4b1!4m8!1m7!3m6!1s0x951a2bdd0d5ed48b:0x619e816abc35c69!2sMS+Sul+Inox!8m2!3d-30.001411!4d-51.2063841!16s%2Fg%2F11hz6v11lg?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                
                 <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"Precisávamos de divisórias de vidro para nosso escritório e a MS Sul apresentou a melhor solução técnica e de design. O resultado superou nossas expectativas e já estamos planejando novos projetos com eles."</p>
-                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Paula Oliveira">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVMGSW85J-2h5h5q_OUOHW6vN_rxdmiTYwbBHM22FazD-wABsATfg=w90-h90-p-rp-mo-br100" alt="Ana Paula Oliveira">
                         </div>
                         <div class="author-info">
-                            <h4>Ana Paula Oliveira</h4>
-                            <p>Comercial - Canoas</p>
+                            <h4>Carmen Carrasco Machado</h4>
                         </div>
                     </div>
+                    <div class="testimonial-content">
+                        <p>Profissionais competentes, serviço bem feito e rapidez na entrega. Recomendo!</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/114395331640820868878/place/ChIJi9ReDd0rGpURaVzDqxboGQY/@-30.001411,-51.208959,17z/data=!4m8!1m7!3m6!1s0x951a2bdd0d5ed48b:0x619e816abc35c69!2sMS+Sul+Inox!8m2!3d-30.001411!4d-51.2063841!16s%2Fg%2F11hz6v11lg?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                
                 <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"Já fiz vários projetos com a MS Sul e sempre atenderam com excelência. O que mais me impressiona é o cuidado com os detalhes e o atendimento pós-venda. Empresa séria e competente que vale a pena recomendar."</p>
-                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Roberto Mendes">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXBAwuycmJnkFCPqbIEKkJY7SB5Z2-2SVqMTWapj79n9swpI_zDAw=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
                         </div>
                         <div class="author-info">
-                            <h4>Roberto Mendes</h4>
-                            <p>Arquiteto - Novo Hamburgo</p>
+                            <h4>Luís Carvalho</h4>
                         </div>
                     </div>
+                    <div class="testimonial-content">
+                        <p>Muito bom o trabalho, execução conforme minha necessidade. Não tentou me empurrar soluções prontas. Me escutou e superou minhas expectativas. Deu outra cara para a piscina.</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/110573295702901782210/place/ChIJi9ReDd0rGpURaVzDqxboGQY/@-30.001411,-51.2063841,17z/data=!3m1!4b1!4m8!1m7!3m6!1s0x951a2bdd0d5ed48b:0x619e816abc35c69!2sMS+Sul+Inox!8m2!3d-30.001411!4d-51.2063841!16s%2Fg%2F11hz6v11lg?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXHY-ZJEL6_V8AQimUdbIr_H8CLtEYuPk8jlp0cbNEBYFFGIA=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Gabriela Hoffmann</h4>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>Serviço impecável , profissionais especializados, me deram várias dicas na instalação, super indico empresa de qualidade !!</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/107996853158495607359/reviews/@-29.7186904,-50.4915952,9z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVRgjc9RmkatCb7-adE5vi9mYCYCIMa2qYAGuUrDxGcGxc52hQ=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Thiago Roll</h4>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>Muito bom o serviço, qualidade e atenção total do Diego Estevan. Recomendo a todos</p>
+                    </div>
+                    <a class="google-logo" href="https://maps.app.goo.gl/TAbwrHxVhVCHbWwS7">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVGDQela98p8Lb-leFN-3yZ0f5CofCkhIBAcNBItjBrVxVVW7Xp=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>André Ruga</h4>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>Serviço de ótima qualidade, e com bom preço! Aprovamos os corrimões em aço inoxidável, ficou muito bonito!</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/100345794289633976856/reviews/@-29.8914639,-51.1060784,10z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1281,19 +1391,6 @@
                     <li><a href="#">Política de Privacidade</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Newsletter</h4>
-                <p>Assine nossa newsletter para receber novidades e promoções.</p>
-                <form action="#" method="POST" style="margin-top: 1rem;">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Seu Email" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid var(--medium-gray);">
-                    </div>
-                    <button type="submit" class="submit-btn" style="width: 100%; padding: 10px; margin-top: 10px;">
-                        Assinar
-                    </button>
-                </form>
             </div>
         </div>
         
