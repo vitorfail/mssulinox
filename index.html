@@ -2,6 +2,10 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Author: Vitor Manoel de Andrade Souza,
+    Illustrator: P. Picture, Category: Serviços de Marketing,
+    Length: 1 pages">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MS Sul Vidraçaria | Soluções Premium em Vidros Temperados e Especiais</title>
     <meta name="description" content="Especialistas em vidros temperados, espelhos, box para banheiro e projetos especiais. Qualidade e segurança para residências e empresas.">
@@ -136,7 +140,36 @@
             z-index: -1;
             background-image: url("imgs/back.png");
         }
-        
+        .icones{
+            pointer-events: none;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+        .icones i{
+            opacity: 0;
+            width: 12px;
+            height: 12px;
+            color: white;
+            animation: money infinite ease-in-out calc(var(--i)*9s);
+        }
+        @keyframes money {
+            0%{
+                opacity: 0.1;
+                transform: translateY(0px);
+            }
+            90%{
+                transform: translateY(-350px);
+            }
+            100%{
+                opacity: 0;
+                transform: translateY(-390px);
+            }
+        }
         .video-overlay {
             position: absolute;
             top: 0;
@@ -170,6 +203,7 @@
         }
         
         .hero h1 {
+            width: 70%;
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
@@ -892,6 +926,7 @@
             }
             
             .hero h1 {
+                width: 100%;
                 font-size: 2.2rem;
             }
             
@@ -913,6 +948,38 @@
                 bottom: 20px;
                 max-width: calc(100% - 40px);
             }
+            .header-container nav{
+                display: none;
+            }
+            .video-overlay::before{
+                    background: linear-gradient(to bottom, rgba(18, 19, 11, 0.289) 50%, rgba(18, 19, 11, 0) 57%);
+            }
+            .stat-item {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+            }
+            .stat-number{
+                font-size: 2.0rem;
+            }
+            .stats-container{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .stat-label{
+                line-height: normal;
+            }
+            .hero-content{
+                width: 90%;
+            }
+            .hero h1{
+                text-align: center;
+            }
+            .hero p{
+                text-align: center;
+            }
         }
         
         @media (max-width: 576px) {
@@ -931,6 +998,7 @@
             .contact-form {
                 padding: 2rem 1.5rem;
             }
+
         }
     </style>
 </head>
@@ -945,7 +1013,7 @@
                 <ul>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#sobre">Avaliações</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -954,8 +1022,8 @@
     
     <!-- Hero Video Section -->
     <section class="hero">
-        <div class="video-background">
-        </div>
+        <div class="video-background"></div>
+        <div class="icones"></div>
         <div class="video-overlay"></div>
         <div class="hero-content">
             <h1>Soluções em Vidros de Alta Qualidade</h1>
@@ -975,20 +1043,16 @@
     <section class="stats">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">15+</div>
+                <div class="stat-number" id="numero1">15+</div>
                 <div class="stat-label">Anos de Experiência</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">1200+</div>
+                <div class="stat-number" id="numero2">1200+</div>
                 <div class="stat-label">Projetos Concluídos</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">98%</div>
+                <div class="stat-number" id="numero3">98%</div>
                 <div class="stat-label">Clientes Satisfeitos</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">24h</div>
-                <div class="stat-label">Atendimento Rápido</div>
             </div>
         </div>
     </section>
@@ -1479,6 +1543,79 @@
             
             window.addEventListener('scroll', animateOnScroll);
             animateOnScroll(); // Run once on load
+            const total = 7; // Defina o número total que você deseja contar
+            let count = 0;
+
+            const total_feedbacks = 1201; // Defina o número total que você deseja contar
+            let count_feedbacks = 0;
+
+            const total_satisfeitos = 98; // Defina o número total que você deseja contar
+            let count_satisfeitos = 0;
+
+            function contadores(){
+                const numero = document.getElementById('numero1');
+
+                if (numero !== null){
+                    const intervalo = setInterval(() => {
+                            if (count < total) {
+                                count=count+1;
+                                numero.textContent ='+'+ count;
+                            } else {
+                                clearInterval(intervalo);
+                            }    
+                        
+                    }, 300);
+                }
+                const numero_feedbacks = document.getElementById('numero2');
+                if(numero_feedbacks !== null){
+                    const intervalo_feedbacks = setInterval(() => {
+                        if (count_feedbacks < total_feedbacks) {
+                            count_feedbacks=count_feedbacks+1;
+                            numero_feedbacks.textContent ='+'+ count_feedbacks;
+                        } else {
+                            clearInterval(intervalo_feedbacks);
+                        }    
+                    }, 7);
+                }
+                const numero_satisfeitos = document.getElementById('numero3');
+
+                if(numero_satisfeitos !== null){
+                    const intervalo_satisfeitos = setInterval(() => {
+                        if (count_satisfeitos < total_satisfeitos) {
+                            count_satisfeitos=count_satisfeitos+1;
+                            numero_satisfeitos.textContent =count_satisfeitos+ "%";
+                        } else {
+                            clearInterval(intervalo_satisfeitos);
+                        }    
+                    }, 70);
+                }
+            }
+            contadores()
+            const numeros = [ 2, 3, 4, 5,1, 2, 3, 4, 5, 2, 3, 4, 5, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5, 2,4, 5, 2, 3, 4, 5, 2, 3, 4, 5];
+            const quadrados = numeros.map(num => num * num);
+            const classes = [
+                "fa-solid fa-house",
+                "fa-solid fa-truck-fast",
+                "fa-solid fa-sack-xmark",
+                "fa-solid fa-landmark"
+            ];
+            // Seleciona a lista no HTML
+            const lista = document.querySelector('.icones');
+
+            // Adiciona os quadrados na lista com um valor aleatório para --i
+            quadrados.forEach(quadrado => {
+                const li = document.createElement('i');
+                const randomClass = classes[Math.floor(Math.random() * classes.length)];
+                li.className = randomClass
+
+                // Gera um número aleatório entre 1 e 100
+                const randomValue = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
+
+                // Define a variável CSS --i
+                li.style.setProperty('--i', randomValue / 70); // Ajusta para estar entre 0 e 1 para opacidade
+
+                lista.appendChild(li);
+            });
         });
     </script>
 </body>
