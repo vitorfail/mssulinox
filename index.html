@@ -22,7 +22,9 @@
             --medium-gray: #BDC3C7;
             --text: #333333;
         }
-        
+        html{
+             scroll-behavior: smooth;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -218,6 +220,12 @@
         }
         
         /* CTA Buttons */
+        #cta-button{
+            background: linear-gradient(56deg, var(--secondary), var(--secondary), #ffafaf, var(--secondary), var(--secondary));
+            /*background: linear-gradient(56deg, var(--secondary, var(--secondary), #ff6868, var(--secondary), var(--secondary)));*/
+            background-size: 400%;
+            animation: changeGradientAnimation 12s ease-in-out infinite;
+        }
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -232,10 +240,23 @@
             transition: all 0.3s ease;
             margin-right: 15px;
             border: 2px solid var(--secondary);
+            background: var(--secondary);
         }
-        
-        .cta-button:hover {
-            background-color: transparent;
+        @keyframes changeGradientAnimation {
+            0% {
+                background-position: 0%;
+            }
+
+            50% {
+                background-position: 400%;
+            }
+            100% {
+                background-position: 0%;
+            }            
+        }
+
+        .cta-button:hover, #cta-button:hover {
+            background: transparent;
             color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -259,8 +280,10 @@
         
         /* Stats Section */
         .stats {
+            position: relative;
             background-color: var(--primary);
             color: var(--light);
+            z-index: 1;
         }
         
         .stats-container {
@@ -291,16 +314,31 @@
         
         /* Services Section */
         .services {
+            position: relative;
             padding: 6rem 0;
+            padding-top: 180px;
             background-color: var(--gray);
         }
-        
+        .services::before{
+            top: -200px;
+            z-index: 0;
+            width: 100%;
+            height: 1050px;
+            display: flex;
+            content: "";
+            background: url(imgs/ondas.png);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+        }
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
         }
         
         .section-title h2 {
+            line-height: normal;
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -320,9 +358,10 @@
         }
         
         .section-title p {
-            color: var(--medium-gray);
+            color: var(--primary);
             max-width: 700px;
             margin: 0 auto;
+            padding: 20px 0px;
             font-size: 1.1rem;
         }
         
@@ -663,11 +702,15 @@
         
         .contact-form {
             background-color: var(--gray);
-            padding: 3rem;
+            padding: 1rem;
             border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        
+        .contact-form img{
+            width: 100%;
+            height: auto;
+        }
         .contact-form h3 {
             font-size: 1.8rem;
             color: var(--primary);
@@ -938,8 +981,9 @@
             .cta-button {
                 margin-right: 0;
                 margin-bottom: 15px;
-                width: 100%;
                 text-align: center;
+                padding: 15px 16px;
+                font-size: 100%;
             }
             
             .map-overlay {
@@ -979,9 +1023,16 @@
             }
             .hero p{
                 text-align: center;
+                font-size: 80%;
             }
             .header-container img{
                 height: 40px;
+            }
+            .services::before{
+                top: -40px;
+            }
+            .services{
+                margin-top: 0;
             }
         }
         
@@ -1010,7 +1061,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo1.png"/>
+                <img alt="Logo" src="logo1.png"/>
             </div>
             <nav>
                 <ul>
@@ -1030,10 +1081,10 @@
         <div class="video-overlay"></div>
         <div class="hero-content">
             <h1>Soluções em Corrimãos de Aço Inox com Alta Qualidade</h1>
-            <p>Especializados em corrimãos inox sob medida, guarda-corpos, escadas e projetos personalizados para residências, comércios e empresas.</p>
+            <p>Na MS SUL INOX, oferecemos uma linha completa de corrimãos e guarda-corpos em aço inoxidável e vidros, desenvolvidos com os mais altos padrões de qualidade e design. Garantimos soluções elegantes, duráveis e sob medida para transformar seus projetos em verdadeiras obras de arte.</p>
             <div class="hero-buttons">
-                <a href="https://api.whatsapp.com/send/?phone=5551993715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
-                    <i class="fab fa-whatsapp whatsapp-icon"></i> Orçamento via WhatsApp
+                <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5551993715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
                 </a>
                 <a href="#servicos" class="cta-button secondary">
                     <i class="fas fa-clipboard-list"></i> Nossos Serviços
@@ -1059,12 +1110,14 @@
             </div>
         </div>
     </section>
-    
     <!-- Services Section -->
     <section class="services" id="servicos">
         <div class="section-title">
             <h2>Nossos Serviços</h2>
             <p>Oferecemos soluções completas em corrimões de aço e guarda-corpos para atender às necessidades residenciais e corporativas</p>
+            <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5551993715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
+            </a>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -1104,6 +1157,9 @@
         <div class="section-title">
             <h2>Nossos Trabalhos</h2>
             <p>Confira alguns dos nossos projetos recentes e inspire-se para o seu</p>
+            <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5551993715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
+            </a>
         </div>
         <div class="portfolio-filter">
             <button class="filter-btn active" data-filter="all">Todos</button>
@@ -1167,6 +1223,9 @@
         <div class="section-title">
             <h2>O Que Dizem Nossos Clientes</h2>
             <p>Depoimentos de quem já contratou nossos serviços</p>
+            <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5551993715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
+            </a>
         </div>
         <div class="testimonials-container">
             <div class="testimonial-slider">
@@ -1179,7 +1238,7 @@
                             <h4>CRPorsche “CRPC Porsche”</h4>
                         </div>
                     </div>
-                    <img class="stars" src="imgs/stars.png"/>
+                    <img alt="Avaliação" class="stars" src="imgs/stars.png"/>
                     <div class="testimonial-content">
                         <p>Excelente. Super indico a MS SUL. Eles fizeram o guarda corpo da minha área de piscina e ficou lindíssima. Tive um imprevisto e um super atraso na minha reforma e eles, pacientemente, aguardaram o tempo que precisei. Depois tivemos uma falha na comunicação e eles corrigiram, sem medir esforços, atendendo a minha vontade. Todo material e equipe de primeira. NOTA DEZ.</p>
                     </div>
@@ -1200,7 +1259,7 @@
                             <h4>Carmen Carrasco Machado</h4>
                         </div>
                     </div>
-                    <img class="stars" src="imgs/stars.png"/>
+                    <img alt="Avaliação" class="stars" src="imgs/stars.png"/>
                     <div class="testimonial-content">
                         <p>Profissionais competentes, serviço bem feito e rapidez na entrega. Recomendo!</p>
                     </div>
@@ -1221,7 +1280,7 @@
                             <h4>Luís Carvalho</h4>
                         </div>
                     </div>
-                    <img class="stars" src="imgs/stars.png"/>
+                    <img alt="Avaliação" class="stars" src="imgs/stars.png"/>
                     <div class="testimonial-content">
                         <p>Muito bom o trabalho, execução conforme minha necessidade. Não tentou me empurrar soluções prontas. Me escutou e superou minhas expectativas. Deu outra cara para a piscina.</p>
                     </div>
@@ -1242,7 +1301,7 @@
                             <h4>Gabriela Hoffmann</h4>
                         </div>
                     </div>
-                    <img class="stars" src="imgs/stars.png"/>
+                    <img alt="Avaliação" class="stars" src="imgs/stars.png"/>
                     <div class="testimonial-content">
                         <p>Serviço impecável , profissionais especializados, me deram várias dicas na instalação, super indico empresa de qualidade !!</p>
                     </div>
@@ -1263,7 +1322,7 @@
                             <h4>Thiago Roll</h4>
                         </div>
                     </div>
-                    <img class="stars" src="imgs/stars.png"/>
+                    <img alt="Avaliação" class="stars" src="imgs/stars.png"/>
                     <div class="testimonial-content">
                         <p>Muito bom o serviço, qualidade e atenção total do Diego Estevan. Recomendo a todos</p>
                     </div>
@@ -1284,7 +1343,7 @@
                             <h4>André Ruga</h4>
                         </div>
                     </div>
-                    <img class="stars" src="imgs/stars.png"/>
+                    <img alt="Avaliação" class="stars" src="imgs/stars.png"/>
                     <div class="testimonial-content">
                         <p>Serviço de ótima qualidade, e com bom preço! Aprovamos os corrimões em aço inoxidável, ficou muito bonito!</p>
                     </div>
@@ -1351,35 +1410,7 @@
             </div>
             
             <div class="contact-form">
-                <h3>Envie sua Mensagem</h3>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Seu Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="Seu Telefone" required>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" required>
-                            <option value="">Selecione o Serviço</option>
-                            <option value="box">Box para Banheiro</option>
-                            <option value="sacadas">Sacadas e Guarda-Corpos</option>
-                            <option value="espelhos">Espelhos Decorativos</option>
-                            <option value="janelas">Janelas e Portas</option>
-                            <option value="divisorias">Divisórias</option>
-                            <option value="outros">Outros</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Descreva seu projeto ou dúvida" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                    </button>
-                </form>
+                <img src="imgs/endereço.jpg" alt="Lugar">
             </div>
         </div>
     </section>
@@ -1440,7 +1471,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 MS Sul Vidraçaria. Todos os direitos reservados.</p>
+            <p>&copy; 2025 MS Sul Vidraçaria. Todos os direitos reservados.</p>
         </div>
     </footer>
     
