@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <meta name="description" content="Author: Vitor Manoel de Andrade Souza,
+    Illustrator: P. Picture, Category: Serviços de Marketing,
+    Length: 1 pages">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Sul Vidraçaria | Soluções Premium em Vidros Temperados e Especiais</title>
+    <meta name="description" content="Especialistas em vidros temperados, espelhos, box para banheiro e projetos especiais. Qualidade e segurança para residências e empresas.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #E74C3C;
+            --accent: #3498DB;
+            --dark: #1A1A1A;
+            --light: #FFFFFF;
+            --gray: #ECF0F1;
+            --medium-gray: #BDC3C7;
+            --text: #333333;
+        }
+        html{
+             scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .header-container img{
+            height: 70px;
+            aspect-ratio: 1/1;
+        }
+        .header-container .infor{
+            padding-top: 10px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .header-container .infor a{
+            outline: none;
+            text-decoration: none;
+            font-weight: 500;
+            color: #333333;
+
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Video Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            background-image: url("../imgs/back.png");
+        }
+        .icones{
+            pointer-events: none;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+        .icones i{
+            opacity: 0;
+            width: 12px;
+            height: 12px;
+            color: white;
+            animation: money infinite ease-in-out calc(var(--i)*9s);
+        }
+        @keyframes money {
+            0%{
+                opacity: 0.1;
+                transform: translateY(0px);
+            }
+            90%{
+                transform: translateY(-350px);
+            }
+            100%{
+                opacity: 0;
+                transform: translateY(-390px);
+            }
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.405));
+            z-index: -1;
+        }
+        .video-overlay::before{
+            content: "";
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, rgba(18, 19, 11, 0.925) 50%, rgba(18, 19, 11, 0) 57%);
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 2rem;
+            width: 80%;
+            color: var(--light);
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            width: 70%;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA Buttons */
+        #cta-button{
+            background: linear-gradient(56deg, var(--secondary), var(--secondary), #ffafaf, var(--secondary), var(--secondary));
+            /*background: linear-gradient(56deg, var(--secondary, var(--secondary), #ff6868, var(--secondary), var(--secondary)));*/
+            background-size: 400%;
+            animation: changeGradientAnimation 12s ease-in-out infinite;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+            border: 2px solid var(--secondary);
+            background: var(--secondary);
+        }
+        @keyframes changeGradientAnimation {
+            0% {
+                background-position: 0%;
+            }
+
+            50% {
+                background-position: 400%;
+            }
+            100% {
+                background-position: 0%;
+            }            
+        }
+
+        .cta-button:hover, #cta-button:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            border-color: var(--light);
+            color: var(--light);
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        
+        .whatsapp-icon {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* Stats Section */
+        .stats {
+            position: relative;
+            background-color: var(--primary);
+            color: var(--light);
+            z-index: 1;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services {
+            position: relative;
+            padding: 6rem 0;
+            padding-top: 180px;
+            background-color: var(--gray);
+        }
+        .services::before{
+            pointer-events: none;
+            top: -200px;
+            z-index: 0;
+            width: 100%;
+            height: 1050px;
+            display: flex;
+            content: "";
+            background: url(../imgs/ondas.png);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            line-height: normal;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--primary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0px;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .service-link i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .service-link:hover {
+            color: var(--accent);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background-color: var(--light);
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--medium-gray);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .filter-btn:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--primary);
+        }
+        
+        .filter-btn.active:after, .filter-btn:hover:after {
+            width: 100%;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-overlay p {
+            color: var(--medium-gray);
+            transform: translateY(20px);
+            transition: transform 0.3s 0.1s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay h3,
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background-color: var(--gray);
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .testimonial-slide .stars{
+            height: 28px;
+            margin-top: 10px;
+            width: auto;
+        }
+        .google-logo{
+            margin-top: 2.0rem;
+            height: fit-content;
+            width: fit-content;
+        }
+        .google-logo svg{
+            height: 2.0rem;
+            margin-top: 1.0rem;
+        }
+        .testimonial-slide {
+            background-color: var(--light);
+            padding: 2rem;
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 0 1rem;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        
+        .testimonial-content {
+            color: rgb(17, 17, 17);
+            font-size: 16px;
+            font-family: "Roboto", sans-serif;
+            position: relative;
+            z-index: 1;
+            line-height: 23px;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            background-color: var(--secondary);
+            color: var(--light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-details p, .contact-details a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-form {
+            background-color: var(--gray);
+            padding: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .contact-form img{
+            width: 100%;
+            height: auto;
+        }
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary);
+            color: var(--light);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Map Section */
+        .map-section {
+            height: 500px;
+            position: relative;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 100%;
+        }
+        .map-container iframe{
+            width: 100%;
+            height: 100%;
+        }
+        .map-overlay {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 350px;
+            z-index: 1;
+        }
+        
+        .map-overlay h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .map-overlay p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .map-overlay i {
+            color: var(--secondary);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links p{
+            font-weight: 100;
+            color: var(--medium-gray);
+        }
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Fixed Button */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-fixed:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .testimonial-slider{
+                flex-direction: column;
+            }
+            .testimonial-slide{
+                width: 100%;
+                margin: auto;
+                margin-top: 20px;
+            }
+            .header-container {
+                flex-direction: column;
+                padding: 0.6rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .hero h1 {
+                width: 100%;
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cta-button {
+                margin-right: 0;
+                margin-bottom: 15px;
+                text-align: center;
+                padding: 15px 16px;
+                font-size: 100%;
+            }
+            
+            .map-overlay {
+                left: 20px;
+                display: none;
+                bottom: 20px;
+                max-width: calc(100% - 40px);
+            }
+            .header-container nav{
+                display: none;
+            }
+            .video-overlay::before{
+                    background: linear-gradient(to bottom, rgba(18, 19, 11, 0.289) 50%, rgba(18, 19, 11, 0) 57%);
+            }
+            .stat-item {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+            }
+            .stat-number{
+                font-size: 2.0rem;
+            }
+            .stats-container{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .stat-label{
+                line-height: normal;
+            }
+            .hero-content{
+                width: 90%;
+            }
+            .hero h1{
+                text-align: center;
+            }
+            .hero p{
+                text-align: center;
+                font-size: 80%;
+            }
+            .header-container img{
+                height: 40px;
+            }
+            .services::before{
+                top: -40px;
+            }
+            .services{
+                margin-top: 0;
+            }
+            .header-container .infor{
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-slide {
+                padding: 2rem 1.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img alt="Logo" src="../logo1.png"/>
+            </div>
+            <div class="infor">
+                <a href="https://api.whatsapp.com/send/?phone=5547991715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0">(47) 999171-5818</a>
+                <a href="mailto:contato@mssulinox.com.br">contato@mssulinox.com.br</a>
+
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#sobre">Avaliações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Video Section -->
+    <section class="hero">
+        <div class="video-background"></div>
+        <div class="icones"></div>
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <h1>Soluções em Corrimãos de Aço Inox com Alta Qualidade</h1>
+            <p>Na MS SUL INOX, oferecemos uma linha completa de corrimãos e guarda-corpos em aço inoxidável e vidros, desenvolvidos com os mais altos padrões de qualidade e design. Garantimos soluções elegantes, duráveis e sob medida para transformar seus projetos em verdadeiras obras de arte.</p>
+            <div class="hero-buttons">
+                <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5547991715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
+                </a>
+                <a href="#servicos" class="cta-button secondary">
+                    <i class="fas fa-clipboard-list"></i> Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="numero1">0+</div>
+                <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="numero2">0+</div>
+                <div class="stat-label">Projetos Concluídos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="numero3">0%</div>
+                <div class="stat-label">Clientes Satisfeitos</div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <div class="section-title">
+            <h2>Nossos Serviços</h2>
+            <p>Oferecemos soluções completas em corrimões de aço e guarda-corpos para atender às necessidades residenciais e corporativas</p>
+            <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5547991715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
+            </a>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="../imgs/corrimao.png" alt="Box para Banheiro">
+                </div>
+                <div class="service-content">
+                    <h3>Fabricação e instalação de corrimãos em aço inox</h3>
+                    <p>Projetados sob medida, com alta durabilidade, acabamento premium e design moderno.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="../imgs/guarda-corpo.jpg" alt="Sacadas e Guarda-Corpos">
+                </div>
+                <div class="service-content">
+                    <h3>Guarda-corpos em aço inox</h3>
+                    <p>Estruturas resistentes e elegantes, ideais para áreas internas e externas.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="../imgs/vidro.png" alt="Espelhos Decorativos">
+                </div>
+                <div class="service-content">
+                    <h3>Corrimãos conforme normas da ABNT</h3>
+                    <p>Total conformidade com as normas técnicas de acessibilidade e segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-title">
+            <h2>Nossos Trabalhos</h2>
+            <p>Confira alguns dos nossos projetos recentes e inspire-se para o seu</p>
+            <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5547991715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
+            </a>
+        </div>
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="residencial">Residencial</button>
+            <button class="filter-btn" data-filter="comercial">Comercial</button>
+            <button class="filter-btn" data-filter="sacadas">Sacadas</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="residencial">
+                <img src="../imgs/0.png" alt="Projeto Residencial">
+                <div class="portfolio-overlay">
+                    <h3>Cobertura Moderna</h3>
+                    <p>Portas de correr em vidro temperado</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="comercial">
+                <img src="../imgs/1.png" alt="Projeto Comercial">
+                <div class="portfolio-overlay">
+                    <h3>Escritório Corporativo</h3>
+                    <p>Divisórias em vidro fumê</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="box">
+                <img src="../imgs/3.png" alt="Box Banheiro">
+                <div class="portfolio-overlay">
+                    <h3>Box Elegante</h3>
+                    <p>Vidro temperado 8mm com acabamento em alumínio</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="sacadas">
+                <img src="../imgs/4.png" alt="Sacada de Vidro">
+                <div class="portfolio-overlay">
+                    <h3>Sacada Panorâmica</h3>
+                    <p>Guarda-corpo em vidro laminado</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="residencial">
+                <img src="../imgs/5.png" alt="Janelas Residenciais">
+                <div class="portfolio-overlay">
+                    <h3>Residência Clássica</h3>
+                    <p>Janelas em vidro duplo</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="comercial">
+                <img src="../imgs/6.png" alt="Espelhos Comerciais">
+                <div class="portfolio-overlay">
+                    <h3>Loja de Departamentos</h3>
+                    <p>Espelhos bisotados para provador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="sobre">
+        <div class="section-title">
+            <h2>O Que Dizem Nossos Clientes</h2>
+            <p>Depoimentos de quem já contratou nossos serviços</p>
+            <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5547991715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Faça seu orçamento Gratuito
+            </a>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXvmwGbbuUc24xMMGp-l1aaJUp46lpez9gdVThRYxpYhAtjQyFP=w144-h144-p-rp-mo-br100" alt="Carlos Silva">
+                        </div>
+                        <div class="author-info">
+                            <h4>CRPorsche “CRPC Porsche”</h4>
+                        </div>
+                    </div>
+                    <img alt="Avaliação" class="stars" src="../imgs/stars.png"/>
+                    <div class="testimonial-content">
+                        <p>Excelente. Super indico a MS SUL. Eles fizeram o guarda corpo da minha área de piscina e ficou lindíssima. Tive um imprevisto e um super atraso na minha reforma e eles, pacientemente, aguardaram o tempo que precisei. Depois tivemos uma falha na comunicação e eles corrigiram, sem medir esforços, atendendo a minha vontade. Todo material e equipe de primeira. NOTA DEZ.</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/106239974099880636565/place/ChIJi9ReDd0rGpURaVzDqxboGQY/@-30.001411,-51.2063841,17z/data=!3m1!4b1!4m8!1m7!3m6!1s0x951a2bdd0d5ed48b:0x619e816abc35c69!2sMS+Sul+Inox!8m2!3d-30.001411!4d-51.2063841!16s%2Fg%2F11hz6v11lg?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVMGSW85J-2h5h5q_OUOHW6vN_rxdmiTYwbBHM22FazD-wABsATfg=w90-h90-p-rp-mo-br100" alt="Ana Paula Oliveira">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carmen Carrasco Machado</h4>
+                        </div>
+                    </div>
+                    <img alt="Avaliação" class="stars" src="../imgs/stars.png"/>
+                    <div class="testimonial-content">
+                        <p>Profissionais competentes, serviço bem feito e rapidez na entrega. Recomendo!</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/114395331640820868878/place/ChIJi9ReDd0rGpURaVzDqxboGQY/@-30.001411,-51.208959,17z/data=!4m8!1m7!3m6!1s0x951a2bdd0d5ed48b:0x619e816abc35c69!2sMS+Sul+Inox!8m2!3d-30.001411!4d-51.2063841!16s%2Fg%2F11hz6v11lg?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXBAwuycmJnkFCPqbIEKkJY7SB5Z2-2SVqMTWapj79n9swpI_zDAw=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Luís Carvalho</h4>
+                        </div>
+                    </div>
+                    <img alt="Avaliação" class="stars" src="../imgs/stars.png"/>
+                    <div class="testimonial-content">
+                        <p>Muito bom o trabalho, execução conforme minha necessidade. Não tentou me empurrar soluções prontas. Me escutou e superou minhas expectativas. Deu outra cara para a piscina.</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/110573295702901782210/place/ChIJi9ReDd0rGpURaVzDqxboGQY/@-30.001411,-51.2063841,17z/data=!3m1!4b1!4m8!1m7!3m6!1s0x951a2bdd0d5ed48b:0x619e816abc35c69!2sMS+Sul+Inox!8m2!3d-30.001411!4d-51.2063841!16s%2Fg%2F11hz6v11lg?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXHY-ZJEL6_V8AQimUdbIr_H8CLtEYuPk8jlp0cbNEBYFFGIA=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Gabriela Hoffmann</h4>
+                        </div>
+                    </div>
+                    <img alt="Avaliação" class="stars" src="../imgs/stars.png"/>
+                    <div class="testimonial-content">
+                        <p>Serviço impecável , profissionais especializados, me deram várias dicas na instalação, super indico empresa de qualidade !!</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/107996853158495607359/reviews/@-29.7186904,-50.4915952,9z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVRgjc9RmkatCb7-adE5vi9mYCYCIMa2qYAGuUrDxGcGxc52hQ=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Thiago Roll</h4>
+                        </div>
+                    </div>
+                    <img alt="Avaliação" class="stars" src="../imgs/stars.png"/>
+                    <div class="testimonial-content">
+                        <p>Muito bom o serviço, qualidade e atenção total do Diego Estevan. Recomendo a todos</p>
+                    </div>
+                    <a class="google-logo" href="https://maps.app.goo.gl/TAbwrHxVhVCHbWwS7">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVGDQela98p8Lb-leFN-3yZ0f5CofCkhIBAcNBItjBrVxVVW7Xp=w90-h90-p-rp-mo-br100" alt="Roberto Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>André Ruga</h4>
+                        </div>
+                    </div>
+                    <img alt="Avaliação" class="stars" src="../imgs/stars.png"/>
+                    <div class="testimonial-content">
+                        <p>Serviço de ótima qualidade, e com bom preço! Aprovamos os corrimões em aço inoxidável, ficou muito bonito!</p>
+                    </div>
+                    <a class="google-logo" href="https://www.google.com/maps/contrib/100345794289633976856/reviews/@-29.8914639,-51.1060784,10z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 85 36" class="injected-svg" data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g clip-path="url(#a-163)"><path fill="#4285F4" d="M20.778 13.43h-9.862v2.927h6.994c-.345 4.104-3.76 5.854-6.982 5.854-4.123 0-7.72-3.244-7.72-7.791 0-4.43 3.429-7.841 7.73-7.841 3.317 0 5.272 2.115 5.272 2.115l2.049-2.122s-2.63-2.928-7.427-2.928C4.725 3.644 0 8.8 0 14.367c0 5.457 4.445 10.777 10.988 10.777 5.756 0 9.969-3.942 9.969-9.772 0-1.23-.179-1.941-.179-1.941Z"></path><path fill="#EA4335" d="M28.857 11.312c-4.047 0-6.947 3.163-6.947 6.853 0 3.744 2.813 6.966 6.994 6.966 3.786 0 6.887-2.893 6.887-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.878 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.954-4.181Z"></path><path fill="#FBBC05" d="M43.965 11.312c-4.046 0-6.946 3.163-6.946 6.853 0 3.744 2.813 6.966 6.994 6.966 3.785 0 6.886-2.893 6.886-6.886 0-4.576-3.607-6.933-6.934-6.933Zm.04 2.714c1.99 0 3.876 1.609 3.876 4.201 0 2.538-1.877 4.192-3.885 4.192-2.205 0-3.945-1.766-3.945-4.212 0-2.394 1.718-4.181 3.955-4.181Z"></path><path fill="#4285F4" d="M58.783 11.319c-3.714 0-6.634 3.253-6.634 6.904 0 4.16 3.385 6.918 6.57 6.918 1.97 0 3.017-.782 3.79-1.68v1.363c0 2.384-1.448 3.812-3.633 3.812-2.11 0-3.169-1.57-3.537-2.46l-2.656 1.11c.943 1.992 2.839 4.07 6.215 4.07 3.693 0 6.508-2.327 6.508-7.205V11.734h-2.897v1.17c-.89-.96-2.109-1.585-3.726-1.585Zm.269 2.709c1.821 0 3.69 1.554 3.69 4.21 0 2.699-1.865 4.187-3.73 4.187-1.98 0-3.823-1.608-3.823-4.161 0-2.653 1.914-4.236 3.863-4.236Z"></path><path fill="#EA4335" d="M78.288 11.302c-3.504 0-6.446 2.788-6.446 6.901 0 4.353 3.28 6.934 6.782 6.934 2.924 0 4.718-1.6 5.789-3.032l-2.389-1.59c-.62.962-1.656 1.902-3.385 1.902-1.943 0-2.836-1.063-3.39-2.094l9.266-3.845-.48-1.126c-.896-2.207-2.984-4.05-5.747-4.05Zm.12 2.658c1.263 0 2.171.671 2.557 1.476l-6.187 2.586c-.267-2.002 1.63-4.062 3.63-4.062Z"></path><path fill="#34A853" d="M67.425 24.727h3.044V4.359h-3.044v20.368Z"></path></g><defs><clipPath id="a-163"><path fill="#fff" d="M0 0h84.515v36H0z"></path></clipPath></defs></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <div class="section-title">
+            <h2>Entre em Contato</h2>
+            <p>Estamos prontos para atender seu projeto com a melhor solução em vidros</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informações de Contato</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Endereço</h4>
+                        <p>R. Voluntários da Pátria 3811 | CEP: 90030-003 Bairro: Navegantes</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Telefone</h4>
+                        <p><a href="tel:+5551993715818">(51) 99371-5818</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p><a href="mailto:contato@mssulinox.com.br">contato@mssulinox.com.br</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Horário de Atendimento</h4>
+                        <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <img src="../imgs/endereço.jpg" alt="Lugar">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.6909533360276!2d-48.62994930000001!3d-27.291556299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527576d77f41dd3%3A0x3bd6cba6aadc3e03!2sMS%20SUL%20INOX!5e0!3m2!1spt-BR!2sbr!4v1755914571570!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+        <div class="map-overlay">
+            <h3>Visite Nossa Loja</h3>
+            <p><i class="fas fa-map-marker-alt"></i> R. Voluntários da Pátria 3811 | CEP: 90030-003 Bairro: Navegantes</p>
+            <p><i class="fas fa-city"></i> Porto Alegre - RS</p>
+            <p><i class="fas fa-clock"></i> Seg-Sex: 8h às 18h | Sáb: 8h às 12h</p>
+            <a href="https://api.whatsapp.com/send/?phone=5547991715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="cta-button" style="margin-top: 15px; display: inline-block;">
+                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>MS SUL INOX </h4>
+                <p>Fábrica de Corrimãos de Aço Inox e Guarda-Corpo de vidro.<br><br> Somos especialistas em soluções de aço inox e vidro para residências e empresas, oferecendo qualidade, segurança e design moderno. Atuamos com fabricação própria e projetos sob medida, garantindo sofisticação, durabilidade e inovação em cada obra</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#">Fabricação e instalação de corrimãos em aço inox</a>
+                        <p>Projetados sob medida, com alta durabilidade, acabamento premium e design moderno.</p>
+                    </li>
+                    <li>
+                        <a href="#">Guarda-corpos em aço inox</a>
+                        <p>Estruturas resistentes e elegantes, ideais para áreas internas e externas.</p>
+                    </li>
+                    <li>
+                        <a href="#">Guarda-corpos em vidro temperado</a>
+                        <p>Soluções sofisticadas que valorizam a estética e garantem segurança.</p>
+                    </li>
+                    <li>
+                        <a href="#">Corrimãos conforme normas da ABNT</a>
+                        <p>Total conformidade com as normas técnicas de acessibilidade e segurança.</p>
+                    </li>
+                    <li>
+                        <a href="#">Guarda-corpos para sacadas e escadas</a>
+                        <p>Proteção e estilo em ambientes residenciais, comerciais e corporativos.</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 MS Sul Vidraçaria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Fixed Button -->
+    <a href="https://api.whatsapp.com/send/?phone=5547991715818&text=Ol%C3%A1%2C+vim+pelo+site+da+MSSulInoxcorrimaos%2C+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" class="whatsapp-fixed">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script>
+        // Simple filter functionality for portfolio
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Simple animation on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.service-card, .portfolio-item, .testimonial-slide');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            const services = document.querySelectorAll('.service-card');
+            const portfolioItem = document.querySelectorAll('.portfolio-item');
+            const testimonials = document.querySelectorAll('.testimonial-slide');
+            
+            services.forEach(service => {
+                service.style.opacity = '0';
+                service.style.transform = 'translateY(30px)';
+                service.style.transition = 'all 0.6s ease';
+            });
+            
+            portfolioItem.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+            });
+            
+            testimonials.forEach(testimonial => {
+                testimonial.style.opacity = '0';
+                testimonial.style.transform = 'translateY(30px)';
+                testimonial.style.transition = 'all 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+            const total = 17; // Defina o número total que você deseja contar
+            let count = 0;
+
+            const total_feedbacks = 3332; // Defina o número total que você deseja contar
+            let count_feedbacks = 0;
+
+            const total_satisfeitos = 98; // Defina o número total que você deseja contar
+            let count_satisfeitos = 0;
+
+            function contadores(){
+                const numero = document.getElementById('numero1');
+
+                if (numero !== null){
+                    const intervalo = setInterval(() => {
+                            if (count < total) {
+                                count=count+1;
+                                numero.textContent ='+'+ count;
+                            } else {
+                                clearInterval(intervalo);
+                            }    
+                        
+                    }, 300);
+                }
+                const numero_feedbacks = document.getElementById('numero2');
+                if(numero_feedbacks !== null){
+                    const intervalo_feedbacks = setInterval(() => {
+                        if (count_feedbacks < total_feedbacks) {
+                            count_feedbacks=count_feedbacks+1;
+                            numero_feedbacks.textContent ='+'+ count_feedbacks;
+                        } else {
+                            clearInterval(intervalo_feedbacks);
+                        }    
+                    }, 1);
+                }
+                const numero_satisfeitos = document.getElementById('numero3');
+
+                if(numero_satisfeitos !== null){
+                    const intervalo_satisfeitos = setInterval(() => {
+                        if (count_satisfeitos < total_satisfeitos) {
+                            count_satisfeitos=count_satisfeitos+1;
+                            numero_satisfeitos.textContent =count_satisfeitos+ "%";
+                        } else {
+                            clearInterval(intervalo_satisfeitos);
+                        }    
+                    }, 70);
+                }
+            }
+            contadores()
+            const numeros = [ 2, 3, 4, 5,1, 2, 3, 4, 5, 2, 3, 4, 5, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5, 2,4, 5, 2, 3, 4, 5, 2, 3, 4, 5];
+            const quadrados = numeros.map(num => num * num);
+            const classes = [
+                "fa-solid fa-house",
+                "fa-solid fa-truck-fast",
+                "fa-solid fa-sack-xmark",
+                "fa-solid fa-landmark"
+            ];
+            // Seleciona a lista no HTML
+            const lista = document.querySelector('.icones');
+
+            // Adiciona os quadrados na lista com um valor aleatório para --i
+            quadrados.forEach(quadrado => {
+                const li = document.createElement('i');
+                const randomClass = classes[Math.floor(Math.random() * classes.length)];
+                li.className = randomClass
+
+                // Gera um número aleatório entre 1 e 100
+                const randomValue = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
+
+                // Define a variável CSS --i
+                li.style.setProperty('--i', randomValue / 70); // Ajusta para estar entre 0 e 1 para opacidade
+
+                lista.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
